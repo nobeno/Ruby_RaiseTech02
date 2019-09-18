@@ -100,3 +100,29 @@ towhocommunication = ToWhoCommunication.new()
 towhocommunication.greetToWho("boss")
 towhocommunication.greetToWho("co-worker")
 towhocommunication.greetToWho("nobody")
+
+# 例外処理色々試す
+# ZeroDivisionError
+begin
+    1/0
+rescue
+    puts "0で割れない"
+end
+
+begin
+    1/0
+rescue => e  #変数eに例外の種類を格納
+    puts e
+end
+
+# ArgumentError
+def fullname(surname,firstname)
+    "#{surname} #{firstname}"
+end
+
+begin
+    puts fullname("Inoue")
+rescue => e
+    puts e.class
+    puts e.message
+end
